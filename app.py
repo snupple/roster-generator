@@ -443,7 +443,7 @@ def download_csv():
         return redirect(url_for("index"))
     with DOWNLOAD_LOCK:
         item = DOWNLOAD_STORE.get(token)
-    if not item or not os.path.exists(item["path"):
+    if not item or not os.path.exists(item["path"]):
         flash("CSV not available", "warning")
         return redirect(url_for("index"))
     return send_file(item["path"], as_attachment=True, download_name=item.get("filename", "roster_output.csv"))

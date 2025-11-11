@@ -1,0 +1,159 @@
+/* Theme Variables and Styles */
+
+/* Light Theme (Default) */
+:root,
+[data-theme="light"] {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --input-bg: #ffffff;
+  --input-border: #ced4da;
+  --table-stripe: rgba(0, 0, 0, 0.05);
+  --table-hover: rgba(0, 0, 0, 0.075);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: #212529;
+  --text-color: #f8f9fa;
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --card-bg: #343a40;
+  --border-color: #495057;
+  --input-bg: #495057;
+  --input-border: #6c757d;
+  --table-stripe: rgba(255, 255, 255, 0.05);
+  --table-hover: rgba(255, 255, 255, 0.075);
+}
+
+/* Blue Theme */
+[data-theme="blue"] {
+  --bg-color: #e3f2fd;
+  --text-color: #0d47a1;
+  --primary-color: #1976d2;
+  --secondary-color: #424242;
+  --success-color: #2e7d32;
+  --danger-color: #c62828;
+  --warning-color: #f57c00;
+  --info-color: #0288d1;
+  --card-bg: #ffffff;
+  --border-color: #90caf9;
+  --input-bg: #ffffff;
+  --input-border: #64b5f6;
+  --table-stripe: rgba(25, 118, 210, 0.05);
+  --table-hover: rgba(25, 118, 210, 0.1);
+}
+
+/* Green Theme */
+[data-theme="green"] {
+  --bg-color: #e8f5e9;
+  --text-color: #1b5e20;
+  --primary-color: #2e7d32;
+  --secondary-color: #424242;
+  --success-color: #388e3c;
+  --danger-color: #c62828;
+  --warning-color: #f57c00;
+  --info-color: #0288d1;
+  --card-bg: #ffffff;
+  --border-color: #a5d6a7;
+  --input-bg: #ffffff;
+  --input-border: #81c784;
+  --table-stripe: rgba(46, 125, 50, 0.05);
+  --table-hover: rgba(46, 125, 50, 0.1);
+}
+
+/* Apply theme variables to elements */
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  background-color: var(--bg-color);
+}
+
+.form-control,
+.form-select {
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--text-color) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--input-bg) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--text-color) !important;
+}
+
+.table {
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: var(--table-stripe) !important;
+}
+
+.table > :not(caption) > * > * {
+  border-bottom-color: var(--border-color) !important;
+}
+
+.form-label {
+  color: var(--text-color) !important;
+}
+
+h1, h5, h6 {
+  color: var(--text-color) !important;
+}
+
+.text-muted {
+  color: var(--secondary-color) !important;
+  opacity: 0.7;
+}
+
+hr {
+  border-color: var(--border-color) !important;
+  opacity: 0.25;
+}
+
+/* Theme Selector Styles */
+.theme-selector {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-selector select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.theme-selector select:hover {
+  border-color: var(--primary-color);
+}
+
+.theme-selector label {
+  margin-right: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
