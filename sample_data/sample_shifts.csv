@@ -1,0 +1,13 @@
+id,day,slot,required,required_skills,start_time,end_time
+Mon_Morning,Mon,Morning,1,,08:00,12:00
+Mon_Afternoon,Mon,Afternoon,1,,13:00,17:00
+Tue_Morning,Tue,Morning,1,Nurse,08:00,12:00
+Tue_Afternoon,Tue,Afternoon,1,Technician,13:00,17:00
+Wed_Morning,Wed,Morning,1,Nurse,08:00,12:00
+Wed_Afternoon,Wed,Afternoon,2,,13:00,17:00
+Thu_Morning,Thu,Morning,1,Technician,08:00,12:00
+Thu_Afternoon,Thu,Afternoon,1,,13:00,17:00
+Fri_Morning,Fri,Morning,1,,08:00,12:00
+Fri_Afternoon,Fri,Afternoon,1,Manager,13:00,17:00
+Sat_Morning,Sat,Morning,1,Nurse,08:00,12:00
+Sun_Morning,Sun,Morning,1,Nurse,08:00,12:00

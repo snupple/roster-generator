@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Roster Generator (AJAX)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container py-4">
+      <h1 class="mb-3">Roster Generator — AJAX Web UI</h1>
+
+      <div id="alerts"></div>
+
+      <form id="run-form" enctype="multipart/form-data">
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <label class="form-label">People CSV</label>
+            <input class="form-control" type="file" name="people_file" id="people_file" accept=".csv">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Shifts CSV</label>
+            <input class="form-control" type="file" name="shifts_file" id="shifts_file" accept=".csv">
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <label class="form-label">Prefill CSV (optional)</label>
+            <input class="form-control" type="file" name="prefill_file" id="prefill_file" accept=".csv">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Or choose sample data</label>
+            <select class="form-select" name="sample_choice" id="sample_choice">
+              <option value="">-- none --</option>
+              {% for s in samples %}
+                <option value="{{ s }}">{{ s }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label class="form-label">Minimum rest hours (same day)</label>
+            <input class="form-control" name="min_rest" id="min_rest" value="8">
+          </div>
+          <div class="col-md-4 form-check align-self-end">
+            <input class="form-check-input" type="checkbox" id="use_optimizer" name="use_optimizer">
+            <label class="form-check-label" for="use_optimizer">Use optimizer (PuLP)</label>
+          </div>
+          <div class="col-md-4 align-self-end">
+            <button class="btn btn-primary" id="run-btn" type="button">Run Assignment</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="mb-3">
+        <div id="progress" style="display:none;">
+          <div class="spinner-border spinner-border-sm" role="status"></div>
+          <span id="progress-text">Running...</span>
+        </div>
+      </div>
+
+      <div>
+        <h5>Result</h5>
+        <div id="downloads" style="margin-bottom:10px;"></div>
+        <table class="table table-sm table-striped" id="result-table">
+          <thead>
+            <tr><th>Day</th><th>Slot</th><th>ID</th><th>Assigned</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <hr>
+      <h6>Sample data in repository (sample_data/)</h6>
+      <ul id="sample-list">
+        {% for s in samples %}
+          <li>{{ s }}</li>
+        {% endfor %}
+      </ul>
+      <p class="text-muted">If you don't have PuLP/pandas installed, the app will still work with the greedy algorithm and CSV output.</p>
+    </div>
+
+    <script src="/static/js/roster_ajax.js"></script>
+  </body>
+</html>

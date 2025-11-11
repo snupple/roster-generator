@@ -1,0 +1,7 @@
+name,max_shifts,max_per_day,skills,available_slots,unavailable_slots
+Alice,3,1,Nurse;FirstAid,Mon_Morning;Tue_Morning;Wed_Afternoon;Fri_Morning,
+Bob,4,2,Technician;FirstAid,Mon_Morning;Mon_Afternoon;Tue_Afternoon;Thu_Morning;Fri_Morning,
+Carol,2,1,Nurse,Tue_Morning;Wed_Morning;Wed_Afternoon;Thu_Afternoon,Thu_Afternoon
+Dave,5,2,Manager;Technician,Mon_Morning;Tue_Morning;Wed_Morning;Thu_Morning;Fri_Morning;Fri_Afternoon,
+Eve,3,1,Admin;FirstAid,Mon_Afternoon;Tue_Afternoon;Wed_Afternoon;Thu_Afternoon;Fri_Afternoon,Wed_Afternoon
+Frank,2,1,Nurse;Pediatric,Sat_Morning;Sun_Morning,Sun_Morning

@@ -1,0 +1,4 @@
+id,day,slot,assigned
+Tue_Morning,Tue,Morning,Alice
+Fri_Afternoon,Fri,Afternoon,Dave
+Wed_Afternoon,Wed,Afternoon,Bob;Eve
