@@ -1,0 +1,5 @@
+name,max_shifts,available_slots
+Alice,3,Mon_Morning;Tue_Morning;Wed_Afternoon;Fri_Morning
+Bob,4,Mon_Morning;Mon_Afternoon;Tue_Afternoon;Thu_Morning;Fri_Morning
+Carol,2,Tue_Morning;Wed_Morning;Wed_Afternoon;Thu_Afternoon
+Dave,5,Mon_Morning;Tue_Morning;Wed_Morning;Thu_Morning;Fri_Morning;Fri_Afternoon
