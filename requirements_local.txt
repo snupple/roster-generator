@@ -1,0 +1,4 @@
+PySimpleGUI>=4.0
+pandas>=1.0
+openpyxl>=3.0
+pulp>=2.5.0
